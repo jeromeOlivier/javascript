@@ -29,19 +29,24 @@ const todos = [
 
 console.log(todos[0].name);
 
-console.log(Object.keys(person));
-console.log(Object.keys(person).length);
-console.log(Object.values(person));
-console.log(Object.entries(person));
-console.log(person.hasOwnProperty("name"));
+console.log(Object.keys(person)); // iterates all the keys of the objects
+console.log(Object.keys(person).length); // 7
+console.log(Object.values(person)); // creates an array of all the values
+console.log(Object.entries(person)); // creates an array with the key, value pairs
+console.log(person.hasOwnProperty('name')); // boolean with either true or false
 
 // to access nested attributes using destructuring, call the key, open a new
 // set of braces and apply the same principle to there
 // state is renamed to province using :
-const { name, age, address: { street, state: province, city } } = person;
+const {
+  name,
+  age,
+  address: { street, state: province, city },
+} = person;
 console.log(street, province, city);
 
 // the same principle applies to arrays
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 const [first, second, ...rest] = numbers;
-console.log(first, second, ...rest);
+console.log(first, second); // 1 2
+console.log(first, second, ...rest); // 1 2 3 4 5 6 7 8
